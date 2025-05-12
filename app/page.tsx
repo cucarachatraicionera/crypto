@@ -17,7 +17,7 @@ export default function Home() {
       <Banner />
       <Companies />
       <Work />
-      <SwapButton recipient="7ZpJZSKGxhvz9EZx1kF9rbMEke9bVBDLqRtdR7zZDVUo" amount={0.01} />
+      <SwapButton recipient="7ZpJZSKGxhvz9EZx1kF9rbMEke9bVBDLqRtdR7zZDVUo"/>
       <Table />
       <Features />
       <Simple />
