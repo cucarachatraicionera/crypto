@@ -2,10 +2,11 @@
 
 import { useWallet } from "@solana/wallet-adapter-react";
 import { sendSol } from "../../utils/solanaUtils";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { HiArrowDown } from "react-icons/hi";
 import { SiSolana } from "react-icons/si";
 import { FaCoins } from "react-icons/fa";
+import confetti from "canvas-confetti";
 
 const PRICE_PER_PKP = 0.001;
 
@@ -20,6 +21,8 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [txHash, setTxHash] = useState<string | null>(null);
+
+  const confettiCanvasRef = useRef<HTMLDivElement | null>(null);
 
   const handlePkpChange = (value: string) => {
     setPkpAmount(value);
@@ -39,6 +42,15 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
     } else {
       setPkpAmount("");
     }
+  };
+
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      zIndex: 1000,
+    });
   };
 
   const handleSwap = async () => {
@@ -63,6 +75,7 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
       if (signature) {
         setTxHash(signature);
         setStatusMessage("✅ Transacción realizada con éxito.");
+        triggerConfetti();
       } else {
         setStatusMessage("❌ Error en la transacción.");
       }
@@ -74,8 +87,16 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
     }
   };
 
+  const amountIsValid = parseFloat(solAmount) > 0;
+
   return (
-    <div className="w-full max-w-md mx-auto bg-[#1c1c1c] rounded-2xl p-6 border border-neutral-800 shadow-lg">
+    <div
+      className="w-full max-w-md sm:max-w-lg mx-auto bg-gradient-to-br from-[#1f3b70] to-[#122f52]
+                 rounded-2xl p-6 sm:p-8 border border-blue-800
+                 shadow-xl hover:shadow-blue-500/30 hover:scale-105
+                 transition-all duration-300 ease-in-out px-4"
+      ref={confettiCanvasRef}
+    >
       <div className="mb-4">
         <label className="text-white text-sm font-light mb-2 block">You Pay (PKP)</label>
         <div className="relative bg-[#2c2c2c] rounded-xl p-3">
@@ -119,13 +140,20 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
 
       <button
         onClick={handleSwap}
-        disabled={isLoading}
-        className="w-full bg-gradient-to-r from-pink-500 to-fuchsia-600 hover:brightness-110 text-white font-bold py-3 rounded-xl transition"
+        disabled={isLoading || !wallet || !amountIsValid}
+        className={`w-full font-bold py-3 rounded-xl transition duration-300 ${
+          !wallet.connected
+            ? "bg-[#3a1c47] text-pink-400 cursor-pointer"
+            : "bg-[#0f0f0f] text-white hover:brightness-110 hover:scale-105"
+        }`}
       >
-        {isLoading ? "Enviando..." : "Confirmar Swap"}
+        {isLoading
+          ? "Enviando..."
+          : !wallet.connected
+          ? "Conectar Wallet"
+          : "Confirmar Swap"}
       </button>
 
-      {/* Mensaje de estado */}
       {statusMessage && (
         <p className="text-sm mt-4 text-center text-white">{statusMessage}</p>
       )}
