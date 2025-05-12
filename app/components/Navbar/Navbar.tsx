@@ -89,6 +89,12 @@ const Navbar = () => {
               </div>
             </div>
 
+                {/* WALLET MOBILE */}
+<div className="block lg:hidden ml-auto">
+  <WalletMultiButton className="!bg-[#64cdff] hover:!bg-[#4dbde6] !text-black font-semibold !rounded-full !px-4 !py-2 !text-sm" />
+</div>
+
+
             {/* DRAWER ICON */}
             <div className="block lg:hidden">
               <Bars3Icon
