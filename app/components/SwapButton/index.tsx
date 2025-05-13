@@ -97,6 +97,11 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
                  transition-all duration-300 ease-in-out px-4"
       ref={confettiCanvasRef}
     >
+      <h2 className="text-white text-2xl font-bold text-center">Swap</h2>
+      <p className="text-white text-sm text-center mb-6 mt-1 opacity-80">
+        Intercambia tus tokens PKP por SOL de forma segura
+      </p>
+
       <div className="mb-4">
         <label className="text-white text-sm font-light mb-2 block">You Pay (PKP)</label>
         <div className="relative bg-[#2c2c2c] rounded-xl p-3">
