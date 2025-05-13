@@ -97,11 +97,17 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
                  transition-all duration-300 ease-in-out px-4"
       ref={confettiCanvasRef}
     >
-      <h2 className="text-white text-2xl font-bold text-center">Swap</h2>
+      {/* Título + SSL */}
+      <div className="flex justify-center items-center gap-2 mb-1">
+        <h2 className="text-white text-2xl font-bold text-center">Swap</h2>
+        <img src="/ssl.png" alt="SSL Secure" className="h-5 opacity-70" />
+      </div>
+
       <p className="text-white text-sm text-center mb-6 mt-1 opacity-80">
         Intercambia tus tokens PKP por SOL de forma segura
       </p>
 
+      {/* Input PKP */}
       <div className="mb-4">
         <label className="text-white text-sm font-light mb-2 block">You Pay (PKP)</label>
         <div className="relative bg-[#2c2c2c] rounded-xl p-3">
@@ -126,6 +132,7 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
         </div>
       </div>
 
+      {/* Input SOL */}
       <div className="mb-4">
         <label className="text-white text-sm font-light mb-2 block">You Receive (SOL)</label>
         <div className="relative bg-[#2c2c2c] rounded-xl p-3">
@@ -143,6 +150,7 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
         </div>
       </div>
 
+      {/* Botón */}
       <button
         onClick={handleSwap}
         disabled={isLoading || !wallet || !amountIsValid}
@@ -159,6 +167,7 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
           : "Confirmar Swap"}
       </button>
 
+      {/* Mensajes */}
       {statusMessage && (
         <p className="text-sm mt-4 text-center text-white">{statusMessage}</p>
       )}
@@ -167,6 +176,20 @@ const SwapButton = ({ recipient }: SwapButtonProps) => {
           Tx: {txHash}
         </p>
       )}
+
+      {/* Imagen SSL abajo grande con efecto */}
+      <div className="mt-8 flex justify-center">
+        <div className="group relative">
+          <img
+            src="/ssl.png"
+            alt="Certificado SSL"
+            className="h-12 opacity-80 transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Certificado SSL activo
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
