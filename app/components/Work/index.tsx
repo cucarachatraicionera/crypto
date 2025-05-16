@@ -11,20 +11,20 @@ interface workdata {
 const workdata: workdata[] = [
     {
         imgSrc: '/images/Work/icon-one.svg',
-        heading: 'Create Account',
-        subheading: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry and this',
+        heading: 'Download a Solana Wallet',
+        subheading: 'We recommend Phantom or [Trust Wallet]. Create or import your wallet and keep your recovery phrase safe.',
         hiddenpara: 'standard dummy text ever since the 1500s, when an unknownprinter took a galley of type and scrambled it to make a type specimen book. It has survived...',
     },
     {
         imgSrc: '/images/Work/icon-two.svg',
-        heading: 'Find your Credit',
-        subheading: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry and this',
+        heading: 'Fund Your Wallet with SOL',
+        subheading: 'Buy SOL (Solana) from any exchange (Binance, Coinbase, etc.) and transfer it to your wallet. SOL is needed to pay transaction fees.',
         hiddenpara: 'standard dummy text ever since the 1500s, when an unknownprinter took a galley of type and scrambled it to make a type specimen book. It has survived...',
     },
     {
         imgSrc: '/images/Work/icon-three.svg',
-        heading: 'Exchange Currency',
-        subheading: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry and this',
+        heading: 'Swap SOL for $PKP',
+        subheading: 'Enter the amount of SOL you want to use, confirm the transaction, and receive $PKP instantly in your wallet.',
         hiddenpara: 'standard dummy text ever since the 1500s, when an unknownprinter took a galley of type and scrambled it to make a type specimen book. It has survived...',
     },
 
@@ -36,8 +36,8 @@ const Work = () => {
             <div className='mx-auto max-w-7xl mt-16 px-6 mb-20 relative'>
                 <div className="radial-bgone hidden lg:block"></div>
                 <div className='text-center mb-14'>
-                    <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>How it work</h3>
-                    <p className='text-bluish md:text-lg font-normal leading-8'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br /> Lorem Ipsum has been the industry standard dummy text ever.</p>
+                    <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>How to buy</h3>
+                    <p className='text-bluish md:text-lg font-normal leading-8'>Use your $PKP to join international lotteries or  <br /> stake it for rewards in our ecosystem.</p>
                 </div>
 
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5 mt-32'>
