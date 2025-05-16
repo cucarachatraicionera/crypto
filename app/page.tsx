@@ -20,7 +20,6 @@ export default function Home() {
       <SwapButton recipient="7ZpJZSKGxhvz9EZx1kF9rbMEke9bVBDLqRtdR7zZDVUo"/>
       <Table />
       <Features />
-      <Simple />
       <Trade />
       <Faq />
     </main>
