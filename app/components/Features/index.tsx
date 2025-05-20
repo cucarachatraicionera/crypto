@@ -10,18 +10,18 @@ interface featuresdata {
 const featuresdata: featuresdata[] = [
     {
         imgSrc: '/images/Features/featureOne.svg',
-        heading: 'Secure storage',
-        subheading: 'We lake data security and privacy very seriously',
+        heading: 'Earn While You Play',
+        subheading: '',
     },
     {
         imgSrc: '/images/Features/featureTwo.svg',
-        heading: 'Free to use',
-        subheading: 'Top notch crypto portfolio traking at no cost',
+        heading: 'A Token With Real Utility',
+        subheading: '',
     },
     {
         imgSrc: '/images/Features/featureThree.svg',
-        heading: 'Real-time price data',
-        subheading: 'Updating 24/7 using price data form the biggest exchanges',
+        heading: 'A Fast-Growing Community',
+        subheading: '',
     },
 ]
 
@@ -33,8 +33,8 @@ const Features = () => {
                 {/* Column-1 */}
                 <div>
                     <h3 className="feature-font text-lg font-semibold mb-4 text-center md:text-start">FEATURES</h3>
-                    <h2 className="text-offwhite text-3xl lg:text-5xl font-semibold leading-snug mb-6 text-center md:text-start">The most trusted cryptocurrency platform</h2>
-                    <p className="lg:text-lg font-normal text-bluish text-center md:text-start">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.</p>
+                    <h2 className="text-offwhite text-3xl lg:text-5xl font-semibold leading-snug mb-6 text-center md:text-start">Why Should You Buy PKP (Pinky)?</h2>
+                    <p className="lg:text-lg font-normal text-bluish text-center md:text-start">Pinky is more than a meme — it’s a token with real use. Buy tickets, play, earn rewards and join a growing community. It’s fun, useful, and made to grow.</p>
                 </div>
                 {/* Column-2 */}
                 <div>
