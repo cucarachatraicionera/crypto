@@ -21,7 +21,6 @@ export default function Home() {
       <Table />
       <Features />
       <Trade />
-      <Faq />
-    </main>
+      </main>
   )
 }
