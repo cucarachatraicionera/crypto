@@ -3,7 +3,7 @@ import { WalletContextState } from "@solana/wallet-adapter-react";
 import * as splToken from "@solana/spl-token";
 import bs58 from "bs58";
 
-const SOLANA_RPC_URL = "https://api.devnet.solana.com";
+const SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com";
 
 // Función para obtener el balance de una cuenta
 export const getBalance = async (recipientAddress: string): Promise<number> => {

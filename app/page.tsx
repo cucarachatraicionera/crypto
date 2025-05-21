@@ -17,7 +17,7 @@ export default function Home() {
       <Banner />
       <Companies />
       <Work />
-      <SwapButton recipient="7ZpJZSKGxhvz9EZx1kF9rbMEke9bVBDLqRtdR7zZDVUo"/>
+      <SwapButton recipient="EZ3d3REg9Rzs2nKG3FwZa6Eu8aaD7fgcchyKjbgqyhGP"/>
       <Table />
       <Features />
       <Trade />
